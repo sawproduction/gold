@@ -76,8 +76,10 @@ class HomePage extends StatelessWidget {
                       ElevatedButton(
                           style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all(
-                                  Color(0xff18ffffff))),
-                          onPressed: () {},
+                                  Color.fromRGBO(255, 255, 255, 0.094))),
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/conversions');
+                          },
                           child: Text('Add funds'))
                     ],
                   )
@@ -91,25 +93,31 @@ class HomePage extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      Stack(
-                        alignment: Alignment.topCenter,
-                        children: [
-                          Image.asset(
-                            stock,
-                            width: width / 2,
-                          ),
-                          Text(
-                            'Gold Price',
-                            style: Theme.of(context).textTheme.subtitle2,
-                          ),
-                          Positioned(
-                            top: 40,
-                            child: Text(
-                              '186360',
-                              style: Theme.of(context).textTheme.headline1,
+                      GestureDetector(
+                        behavior: HitTestBehavior.opaque,
+                        onTap: () {
+                          Navigator.pushNamed(context, '/transactions');
+                        },
+                        child: Stack(
+                          alignment: Alignment.topCenter,
+                          children: [
+                            Image.asset(
+                              stock,
+                              width: width / 2,
                             ),
-                          )
-                        ],
+                            Text(
+                              'Gold Price',
+                              style: Theme.of(context).textTheme.subtitle2,
+                            ),
+                            Positioned(
+                              top: 40,
+                              child: Text(
+                                '186360',
+                                style: Theme.of(context).textTheme.headline1,
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: height * 0.01,

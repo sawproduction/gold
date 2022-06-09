@@ -23,10 +23,17 @@ class _GoldState extends State<Gold> {
           DropdownButton(
               isExpanded: true,
               value: 'Gold',
-              items: [DropdownMenuItem(value: 'Gold', child: Text('Gold'))],
+              items: [
+                DropdownMenuItem(
+                    value: 'Gold',
+                    child: Text(
+                      'Gold',
+                      style: TextStyle(color: Colors.black),
+                    ))
+              ],
               onChanged: (newValue) {}),
           SizedBox(
-            height: height * 0.3,
+            height: height * 0.06,
             width: width,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -39,33 +46,19 @@ class _GoldState extends State<Gold> {
                       ),
                     )),
           ),
-          // Flexible(
-          //   child: Row(
-          //     children: [
-          //       Column(
-          //         children: [
-          //           CheckboxListTile(
-          //               title: Text('Buy'),
-          //               value: true,
-          //               onChanged: (newValue) {}),
-          //           CheckboxListTile(
-          //               title: Text('Sell'),
-          //               value: true,
-          //               onChanged: (newValue) {}),
-          //           CheckboxListTile(
-          //               title: Text('Send'),
-          //               value: true,
-          //               onChanged: (newValue) {}),
-          //           CheckboxListTile(
-          //               title: Text('Request'),
-          //               value: true,
-          //               onChanged: (newValue) {})
-          //         ],
-          //       ),
-          //       Image.asset(logo)
-          //     ],
-          //   ),
-          // ),
+          Row(
+            children: [
+              Column(
+                children: [
+                  Checkbox(value: true, onChanged: (newValue) {}),
+                  Checkbox(value: true, onChanged: (newValue) {}),
+                  Checkbox(value: true, onChanged: (newValue) {}),
+                  Checkbox(value: true, onChanged: (newValue) {})
+                ],
+              ),
+              Image.asset(logo)
+            ],
+          ),
           Image.asset(keypad),
           ElevatedButton(
               style: ButtonStyle(

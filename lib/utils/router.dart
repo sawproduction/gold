@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gold/screens/changepassword.dart';
 import 'package:gold/screens/checkout.dart';
 import 'package:gold/screens/completeprofile.dart';
+import 'package:gold/screens/conversions.dart';
 import 'package:gold/screens/editprofile.dart';
 import 'package:gold/screens/forgotpassword.dart';
 import 'package:gold/screens/gold.dart';
@@ -15,6 +16,7 @@ import 'package:gold/screens/paymentcomplete.dart';
 import 'package:gold/screens/paymentdetails.dart';
 import 'package:gold/screens/privacy.dart';
 import 'package:gold/screens/requestfunds.dart';
+import 'package:gold/screens/transactions.dart';
 import 'package:gold/screens/transfer.dart';
 import 'package:gold/screens/transfercomplete.dart';
 import 'package:gold/screens/tutorial.dart';
@@ -77,6 +79,12 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case ('/checkout'):
       return MaterialPageRoute(
           settings: settings, builder: (context) => const Checkout());
+    case ('/conversions'):
+      return MaterialPageRoute(
+          settings: settings, builder: (context) => Conversions());
+    case ('/transactions'):
+      return MaterialPageRoute(
+          settings: settings, builder: (context) => Transactions());
     case ('/transfer-complete'):
       return MaterialPageRoute(
           settings: settings, builder: (context) => const TransferComplete());

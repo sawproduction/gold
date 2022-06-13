@@ -1,7 +1,7 @@
-import 'package:better_player/better_player.dart';
 import 'package:flutter/material.dart';
 import 'package:gold/constants/colors.dart';
 import 'package:gold/constants/images.dart';
+import 'package:video_player/video_player.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({Key? key}) : super(key: key);
@@ -11,17 +11,16 @@ class Onboarding extends StatefulWidget {
 }
 
 class _OnboardingState extends State<Onboarding> {
-  late BetterPlayerController _controller;
+  late VideoPlayerController controller;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    BetterPlayerDataSource dataSource =
-        BetterPlayerDataSource(BetterPlayerDataSourceType.network, video);
-    _controller = BetterPlayerController(
-        BetterPlayerConfiguration(autoPlay: true, aspectRatio: 9 / 16),
-        betterPlayerDataSource: dataSource);
+    controller = VideoPlayerController.asset(video);
+    controller.initialize().then((value) {
+      setState(() {});
+    });
   }
 
   @override
@@ -30,9 +29,7 @@ class _OnboardingState extends State<Onboarding> {
       body: SafeArea(
           child: Column(
         children: [
-          AspectRatio(
-              aspectRatio: 9 / 16,
-              child: BetterPlayer(controller: _controller)),
+          AspectRatio(aspectRatio: 9 / 16, child: VideoPlayer(controller)),
           Spacer(),
           ElevatedButton(
               style: ButtonStyle(

@@ -23,40 +23,40 @@ class HomePage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    //mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/my-profile');
-                        },
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(100000),
-                          child: Image.network(
-                              height: 50,
-                              width: 50,
-                              fit: BoxFit.cover,
-                              'https://picsum.photos/id/237/200/300'),
-                        ),
-                      ),
-                      SizedBox(
-                        width: width * 0.01,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                  GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () {
+                        Navigator.pushNamed(context, '/my-profile');
+                      },
+                      child: Row(
+                        //mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text(
-                            'Welcome, display name',
-                            style: Theme.of(context).textTheme.subtitle2,
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(100000),
+                            child: Image.network(
+                                height: 50,
+                                width: 50,
+                                fit: BoxFit.cover,
+                                'https://picsum.photos/id/237/200/300'),
                           ),
-                          Text(
-                            'Your account details are below',
-                            style: TextStyle(color: Colors.grey),
+                          SizedBox(
+                            width: width * 0.01,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Welcome, display name',
+                                style: Theme.of(context).textTheme.subtitle2,
+                              ),
+                              Text(
+                                'Your account details are below',
+                                style: TextStyle(color: Colors.grey),
+                              )
+                            ],
                           )
                         ],
-                      )
-                    ],
-                  ),
+                      )),
                   SizedBox(
                     height: height * 0.02,
                   ),
@@ -78,7 +78,7 @@ class HomePage extends StatelessWidget {
                               backgroundColor: MaterialStateProperty.all(
                                   Color.fromRGBO(255, 255, 255, 0.094))),
                           onPressed: () {
-                            Navigator.pushNamed(context, '/conversions');
+                            Navigator.pushNamed(context, '/vault');
                           },
                           child: Text('Add funds'))
                     ],
@@ -96,7 +96,7 @@ class HomePage extends StatelessWidget {
                       GestureDetector(
                         behavior: HitTestBehavior.opaque,
                         onTap: () {
-                          Navigator.pushNamed(context, '/transactions');
+                          Navigator.pushNamed(context, '/gold');
                         },
                         child: Stack(
                           alignment: Alignment.topCenter,
@@ -174,7 +174,7 @@ class HomePage extends StatelessWidget {
                         GestureDetector(
                           behavior: HitTestBehavior.opaque,
                           onTap: () {
-                            Navigator.pushNamed(context, '/vault');
+                            Navigator.pushNamed(context, '/gold');
                           },
                           child: Image.asset(
                             logo,
@@ -184,7 +184,7 @@ class HomePage extends StatelessWidget {
                         GestureDetector(
                           behavior: HitTestBehavior.opaque,
                           onTap: () {
-                            Navigator.pushNamed(context, '/gold');
+                            Navigator.pushNamed(context, '/conversions');
                           },
                           child: Image.asset(
                             convert,
@@ -194,7 +194,7 @@ class HomePage extends StatelessWidget {
                         GestureDetector(
                           behavior: HitTestBehavior.opaque,
                           onTap: () {
-                            Navigator.pushNamed(context, '/payment-complete');
+                            Navigator.pushNamed(context, '/transactions');
                           },
                           child: Image.asset(
                             transaction,
@@ -204,7 +204,7 @@ class HomePage extends StatelessWidget {
                         GestureDetector(
                           behavior: HitTestBehavior.opaque,
                           onTap: () {
-                            Navigator.pushNamed(context, '/checkout');
+                            Navigator.pushNamed(context, '/vault');
                           },
                           child: Image.asset(
                             forgot,

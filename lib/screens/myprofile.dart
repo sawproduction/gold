@@ -55,17 +55,6 @@ class MyProfile extends StatelessWidget {
                 'My account',
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                decoration: InputDecoration(
-                    fillColor: filedColor,
-                    filled: true,
-                    hintText: 'Edit Profile',
-                    hintStyle: TextStyle(color: Colors.white),
-                    enabledBorder: OutlineInputBorder()),
-              ),
-            ),
             GestureDetector(
               behavior: HitTestBehavior.opaque,
               onTap: () {

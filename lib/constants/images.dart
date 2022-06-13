@@ -1,8 +1,6 @@
 import 'package:gold/constants/constans.dart';
 
-const video =
-    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/gold-99d5va/assets/ym9xwtj58f7x/AC819F4D-54AA-4EAD-B8D3-653BF23469CA.mp4';
-
+const String video = '${baseFile}a.mp4';
 const String convert = baseFile + 'convert.png';
 
 const String delivery = baseFile + 'delivery.png';

@@ -32,7 +32,11 @@ class MyProfile extends StatelessWidget {
                             fit: BoxFit.cover,
                             'https://picsum.photos/id/237/200/300'),
                       ),
-                      Icon(Icons.exit_to_app)
+                      IconButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          icon: Icon(Icons.exit_to_app))
                     ],
                   ),
                   Text(

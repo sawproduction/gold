@@ -11,6 +11,10 @@ class Gold extends StatefulWidget {
 
 class _GoldState extends State<Gold> {
   List measures = ['Grains', 'Grams', 'Ounces(Troy)'];
+  bool buy = true;
+  bool sell = false;
+  bool send = false;
+  bool request = false;
 
   @override
   Widget build(BuildContext context) {
@@ -47,13 +51,51 @@ class _GoldState extends State<Gold> {
                     )),
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Checkbox(value: true, onChanged: (newValue) {}),
-                  Checkbox(value: true, onChanged: (newValue) {}),
-                  Checkbox(value: true, onChanged: (newValue) {}),
-                  Checkbox(value: true, onChanged: (newValue) {})
+                  Row(children: [
+                    Checkbox(
+                        value: buy,
+                        onChanged: (newValue) {
+                          setState(() {
+                            buy = !buy;
+                          });
+                        }),
+                    Text('Buy')
+                  ]),
+                  Row(children: [
+                    Checkbox(
+                        value: sell,
+                        onChanged: (newValue) {
+                          setState(() {
+                            sell = !sell;
+                          });
+                        }),
+                    Text('Sell')
+                  ]),
+                  Row(children: [
+                    Checkbox(
+                        value: send,
+                        onChanged: (newValue) {
+                          setState(() {
+                            send = !send;
+                          });
+                        }),
+                    Text('Send')
+                  ]),
+                  Row(children: [
+                    Checkbox(
+                        value: request,
+                        onChanged: (newValue) {
+                          setState(() {
+                            request = !request;
+                          });
+                        }),
+                    Text('Request')
+                  ]),
                 ],
               ),
               Image.asset(logo)

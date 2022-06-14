@@ -45,7 +45,7 @@ class _OnboardingState extends State<Onboarding> {
                 'Login/Signup',
                 style: Theme.of(context).textTheme.subtitle1,
               )),
-          Spacer(),
+          const Spacer(),
         ],
       )),
     );

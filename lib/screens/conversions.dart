@@ -24,9 +24,14 @@ class _ConversionsState extends State<Conversions> {
               padding: const EdgeInsets.only(left: 15.0),
               child: Row(
                 children: [
-                  Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(
+                      Icons.arrow_back,
+                      color: Colors.white,
+                    ),
                   ),
                   SizedBox(
                     width: 5,

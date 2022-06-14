@@ -18,6 +18,7 @@ class _OnboardingState extends State<Onboarding> {
     // TODO: implement initState
     super.initState();
     controller = VideoPlayerController.asset(video);
+    controller.addListener(() {});
     controller.initialize().then((value) {
       setState(() {});
     });

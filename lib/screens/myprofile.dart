@@ -58,6 +58,24 @@ class MyProfile extends StatelessWidget {
             GestureDetector(
               behavior: HitTestBehavior.opaque,
               onTap: () {
+                Navigator.pushNamed(context, '/edit-profile');
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  padding: EdgeInsets.all(8),
+                  width: width,
+                  decoration: BoxDecoration(
+                      color: filedColor,
+                      border: Border.all(color: Colors.black)),
+                  child: Text('Edit profile',
+                      style: TextStyle(color: Colors.white)),
+                ),
+              ),
+            ),
+            GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () {
                 Navigator.pushNamed(context, '/change-password');
               },
               child: Padding(
@@ -73,15 +91,40 @@ class MyProfile extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                decoration: InputDecoration(
-                    fillColor: filedColor,
-                    filled: true,
-                    hintText: 'Edit Profile',
-                    hintStyle: TextStyle(color: Colors.white),
-                    enabledBorder: OutlineInputBorder()),
+            GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () {
+                Navigator.pushNamed(context, '/notification-settings');
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  padding: EdgeInsets.all(8),
+                  width: width,
+                  decoration: BoxDecoration(
+                      color: filedColor,
+                      border: Border.all(color: Colors.black)),
+                  child: Text('Notification Settings',
+                      style: TextStyle(color: Colors.white)),
+                ),
+              ),
+            ),
+            GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () {
+                Navigator.pushNamed(context, '/tutorial');
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  padding: EdgeInsets.all(8),
+                  width: width,
+                  decoration: BoxDecoration(
+                      color: filedColor,
+                      border: Border.all(color: Colors.black)),
+                  child:
+                      Text('Tutorial', style: TextStyle(color: Colors.white)),
+                ),
               ),
             ),
             GestureDetector(
